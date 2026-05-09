@@ -3,26 +3,610 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varnika's Ayushya Homam · June 9th</title>
-  <meta property="og:title" content="Varnika's Ayushya Homam — June 9th" />
-  <meta property="og:description" content="With the blessings of Lord Ganesha, we invite you to celebrate Kuku's first year." />
+  <title>Varnika &middot; Ayushyahomam &amp; Karnavedha</title>
+  <meta name="description" content="Akshay &amp; Pavithra invite you for the Ayushyahomam &amp; Karnavedha of Varnika &mdash; 9 June 2026, Bengaluru." />
+  <meta property="og:title" content="Varnika &middot; Ayushyahomam &amp; Karnavedha" />
+  <meta property="og:description" content="9 June 2026 &middot; 7:00 AM &middot; Havyaka Bhavana, Bengaluru" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#A50E2A" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=EB+Garamond:ital@0;1&family=Tiro+Tamil:ital@0;1&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Marcellus&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --cream: #FAF3E0;
+      --cream-deep: #F5E6C9;
+      --cream-bright: #FFF8E5;
+      --sand: #EAD3A0;
+      --kumkum: #A50E2A;
+      --kumkum-deep: #6E0617;
+      --terracotta: #A03B2A;
+      --gold: #C9A227;
+      --gold-bright: #E8C66A;
+      --gold-deep: #8E6D14;
+      --leaf: #5C7A2E;
+      --leaf-deep: #3F5520;
+      --teal: #155B6B;
+      --teal-deep: #0A3540;
+      --emerald: #1F5C3F;
+      --emerald-deep: #0D3322;
+      --ink: #2A1810;
+      --ink-soft: #5A3A28;
+    }
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Lora", Georgia, serif;
+      font-size: clamp(16px, 1.4vw, 17px);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a  { color: inherit; text-decoration: none; }
+
+    /* ───── Panels ───── */
+    .panel { position: relative; width: 100%; overflow: hidden; }
+    .panel-inner {
+      max-width: 760px; margin: 0 auto;
+      padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 4vw, 2rem);
+      position: relative; z-index: 2;
+      text-align: center;
+    }
+
+    /* Toran banner across the very top of saturated panels */
+    .toran-strip {
+      width: 100%;
+      height: clamp(78px, 11vw, 120px);
+      background-image: url("assets/toran.png");
+      background-size: auto 100%;
+      background-position: center;
+      background-repeat: repeat-x;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+      position: relative; z-index: 4;
+    }
+    .toran-strip.flipped { transform: scaleY(-1); }
+
+    /* ───── Type ───── */
+    .display { font-family: "Marcellus", "Cormorant Garamond", serif; font-weight: 400; letter-spacing: 0.02em; }
+    .italic  { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 400; }
+    .eyebrow {
+      font-family: "Marcellus", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: clamp(11px, 1.2vw, 13px);
+      color: var(--gold-deep);
+    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 1s ease, transform 1s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ═════════ HERO ═════════ */
+    .hero {
+      background: var(--kumkum);
+      color: var(--cream-bright);
+      background-image:
+        radial-gradient(ellipse at 50% 30%, rgba(232,198,106,0.18), transparent 65%),
+        radial-gradient(ellipse at 50% 100%, rgba(110,6,23,0.7), transparent 60%);
+      padding: 0 0 clamp(3rem, 6vw, 4.5rem);
+    }
+    .hero-inner {
+      max-width: 760px; margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2rem) 0;
+      text-align: center;
+    }
+
+    /* Portrait medallion */
+    .medallion {
+      position: relative;
+      width: clamp(220px, 56vw, 320px);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      filter: drop-shadow(0 22px 32px rgba(0,0,0,0.45));
+    }
+    .medallion-frame {
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 45%,
+        rgba(255,240,180,0.92) 0%,
+        rgba(245,230,201,0.95) 45%,
+        rgba(232,198,106,1) 95%);
+      box-shadow:
+        inset 0 0 0 4px var(--kumkum-deep),
+        inset 0 0 0 5px var(--gold-bright),
+        inset 0 0 0 9px var(--gold-deep),
+        inset 0 0 0 10px var(--gold-bright),
+        inset 0 0 0 14px var(--kumkum-deep),
+        0 0 0 3px var(--gold-bright),
+        0 0 0 5px var(--kumkum-deep),
+        0 0 0 6px var(--gold);
+      overflow: hidden;
+    }
+    .medallion-frame img {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 92%; height: 92%;
+      transform: translate(-50%, -48%);
+      object-fit: contain;
+      object-position: center top;
+    }
+    .medallion .compass {
+      position: absolute;
+      width: clamp(40px, 11vw, 64px);
+      height: clamp(40px, 11vw, 64px);
+      pointer-events: none;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+      z-index: 4;
+    }
+    .medallion .compass.nw { top: -6%;    left: -6%;   transform: rotate(0); }
+    .medallion .compass.ne { top: -6%;    right: -6%;  transform: scaleX(-1); }
+    .medallion .compass.sw { bottom: -6%; left: -6%;   transform: scaleY(-1); }
+    .medallion .compass.se { bottom: -6%; right: -6%;  transform: scale(-1, -1); }
+
+    /* Hero titling */
+    .hero-titling { margin: clamp(1.4rem, 3vw, 2.2rem) 0 0; }
+    .ceremony-names {
+      display: flex; flex-direction: column; align-items: center;
+      font-family: "Marcellus", "Cormorant Garamond", serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: clamp(2.1rem, 7.4vw, 4.6rem);
+      letter-spacing: 0.06em;
+      line-height: 0.98;
+      color: var(--cream-bright);
+      margin: 0;
+      text-shadow: 1px 2px 0 var(--kumkum-deep), 0 0 32px rgba(232,198,106,0.18);
+    }
+    .ceremony-names .word { display: block; }
+    .ceremony-names .amp {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 0.55em;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--gold-bright);
+      margin: 0.04em 0;
+      text-shadow: 1px 1px 0 var(--kumkum-deep);
+    }
+    .hero-connector {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      color: var(--gold-bright);
+      letter-spacing: 0.06em;
+      margin: clamp(0.7rem, 1.8vw, 1.1rem) 0 clamp(0.3rem, 0.8vw, 0.5rem);
+      opacity: 0.92;
+    }
+    .hero-opener { margin: 0 0 clamp(0.7rem, 1.8vw, 1.1rem) !important; }
+    .hero-name {
+      font-family: "Yatra One", cursive;
+      font-size: clamp(1.7rem, 5.6vw, 3.4rem);
+      color: var(--cream-bright);
+      margin: 0;
+      line-height: 1;
+      text-shadow: 2px 2px 0 var(--kumkum-deep);
+    }
+    .hero-name::before, .hero-name::after {
+      content: "\2726";
+      color: var(--gold-bright);
+      font-size: 0.32em;
+      vertical-align: 0.5em;
+      margin: 0 0.45em;
+    }
+    .hero-sub {
+      margin: clamp(1.6rem, 3.5vw, 2.4rem) auto 0;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      opacity: 0.92;
+    }
+    .hero-sub .dot {
+      display: inline-block;
+      width: 5px; height: 5px;
+      background: var(--gold-bright);
+      border-radius: 50%;
+      vertical-align: middle;
+      margin: 0 0.7em 0.18em;
+    }
+
+    /* ═════════ INVOCATION ═════════ */
+
+
+    /* Mango-leaf toran (SWAYING) */
+      50% { transform: rotate(1.2deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      }
+
+
+    /* ═════════ DETAILS — TWO RITUALS ═════════ */
+    .details {
+      background: var(--cream);
+      color: var(--ink);
+      background-image:
+        radial-gradient(circle at 80% 10%, rgba(201,162,39,0.14), transparent 55%),
+        radial-gradient(circle at 20% 90%, rgba(160,59,42,0.06), transparent 55%);
+    }
+    .details .header {
+      font-family: "Marcellus", serif;
+      font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+      color: var(--terracotta);
+      line-height: 1.2;
+      margin: 1rem auto 0.5rem;
+    }
+    /* Kalasha-flanked heading with thoran below */
+    .ceremony-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.5rem, 2vw, 1.25rem);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .ceremony-heading .heading-text { flex: 0 1 auto; min-width: 0; text-align: center; }
+    .ceremony-heading .heading-text .eyebrow { margin: 0 0 0.6rem; }
+    .ceremony-heading .heading-text .header { margin: 0; }
+    .ceremony-kalasha {
+      width: clamp(60px, 12vw, 100px);
+      height: auto;
+      flex-shrink: 0;
+      filter: drop-shadow(0 6px 12px rgba(110,6,23,0.18));
+    }
+    .thoran-strip {
+      width: 100%;
+      height: clamp(70px, 11vw, 110px);
+      background-image: url("assets/thoran.png");
+      background-size: auto 100%;
+      background-position: center top;
+      background-repeat: repeat-x;
+      margin-bottom: clamp(0.5rem, 2vw, 1.25rem);
+      filter: drop-shadow(0 6px 12px rgba(110,6,23,0.15));
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1rem, 2.4vw, 1.5rem);
+      max-width: 700px;
+      margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
+    }
+    @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+
+    .ritual-card {
+      background: rgba(255, 250, 235, 0.7);
+      border: 1px solid rgba(168, 132, 43, 0.4);
+      border-radius: 4px;
+      padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2.4vw, 1.5rem);
+      text-align: center;
+      position: relative;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 8px 32px rgba(122,31,26,0.06);
+    }
+    .ritual-card::before, .ritual-card::after {
+      content: "";
+      position: absolute;
+      width: 14px; height: 14px;
+      border: 1px solid var(--gold-deep);
+    }
+    .ritual-card::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+    .ritual-card::after  { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+    .ritual-card .icon {
+      width: clamp(72px, 14vw, 100px); height: auto;
+      margin: 0 auto 1rem; display: block;
+      filter: drop-shadow(0 4px 8px rgba(110,6,23,0.18));
+    }
+    .ritual-card .card-eyebrow {
+      font-family: "Marcellus", serif;
+      font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold-deep);
+      margin-bottom: 0.5rem;
+    }
+    .ritual-card .card-title {
+      font-family: "Marcellus", serif;
+      font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+      color: var(--kumkum);
+      margin-bottom: 0.6rem;
+    }
+    .ritual-card .card-meta {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(0.92rem, 2vw, 1.05rem);
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* ═════════ VENUE ═════════ */
+    .venue {
+      background: var(--cream-deep);
+      color: var(--ink);
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(201,162,39,0.16), transparent 50%);
+    }
+    .venue .name {
+      font-family: "Marcellus", serif;
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      color: var(--terracotta);
+      margin: 1rem 0 0.4rem;
+      letter-spacing: 0.01em;
+    }
+    .venue .loc {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      color: var(--ink-soft);
+      margin-bottom: clamp(1.4rem, 3vw, 2rem);
+    }
+    .map-frame {
+      max-width: 620px; margin: 0 auto;
+      border-radius: 0;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 0 1px var(--gold-deep), 0 12px 28px -10px rgba(0,0,0,0.18);
+    }
+    .map-frame iframe {
+      width: 100%; height: clamp(220px, 32vw, 320px);
+      border: 0; display: block;
+      filter: saturate(0.92);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: clamp(1.25rem, 2.6vw, 1.6rem);
+      padding: clamp(0.75rem, 1.6vw, 0.95rem) clamp(1.4rem, 3vw, 1.8rem);
+      background: var(--terracotta);
+      color: var(--cream-bright) !important;
+      font-family: "Marcellus", serif;
+      font-size: clamp(0.78rem, 1.4vw, 0.88rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: none;
+      box-shadow: 0 6px 20px rgba(160,59,42,0.3);
+      transition: background 0.25s ease, transform 0.18s ease, box-shadow 0.25s ease;
+    }
+    .btn:hover { background: var(--kumkum); box-shadow: 0 10px 26px rgba(122,31,26,0.4); }
+    .btn:active { transform: scale(0.97); }
+
+    /* ═════════ HOSTS ═════════ */
+    .hosts {
+      background: var(--emerald-deep);
+      color: var(--cream-bright);
+      background-image:
+        radial-gradient(circle at 30% 30%, rgba(31,92,63,0.55), transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(212,162,62,0.16), transparent 60%);
+    }
+    .hosts .leaf {
+      position: absolute;
+      width: clamp(180px, 30vw, 320px);
+      opacity: 0.5;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      filter: hue-rotate(-12deg) saturate(1.2);
+      z-index: 1;
+    }
+    .hosts .leaf.l { top: 8%; left: -6%; transform: rotate(-22deg); }
+    .hosts .leaf.r { bottom: 6%; right: -6%; transform: rotate(158deg); }
+
+    .hosts .preamble {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color: var(--gold-bright);
+      letter-spacing: 0.04em;
+      margin: 0 0 1rem;
+      opacity: 0.95;
+    }
+    .hosts-names {
+      font-family: "Yatra One", cursive;
+      font-size: clamp(2.4rem, 8vw, 4rem);
+      color: var(--cream-bright);
+      line-height: 1.1;
+      margin: 0;
+      text-shadow: 0 2px 0 var(--emerald-deep), 0 0 30px rgba(232,198,106,0.18);
+    }
+    .hosts-names .amp {
+      color: var(--gold-bright);
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 500;
+      margin: 0 0.18em;
+    }
+    .hosts-sub {
+      margin-top: clamp(0.8rem, 2vw, 1.2rem);
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--cream);
+      opacity: 0.9;
+    }
+
+    /* ═════════ CLOSING ═════════ */
+    .closing {
+      background: var(--kumkum);
+      color: var(--cream-bright);
+      background-image:
+        radial-gradient(circle at 50% 100%, rgba(110,6,23,0.7), transparent 60%);
+    }
+    .lamp-wrap {
+      position: relative;
+      width: clamp(170px, 30vw, 220px);
+      margin: clamp(0.5rem, 2vw, 1.3rem) auto clamp(1.4rem, 3vw, 2rem);
+      filter: drop-shadow(0 16px 22px rgba(0,0,0,0.4));
+    }
+    .lamp-wrap img { width: 100%; }
+    .flame-glow {
+      position: absolute;
+      top: 16%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200%; aspect-ratio: 1;
+      background: radial-gradient(circle at center,
+        rgba(255, 235, 160, 0.95) 0%,
+        rgba(255, 210, 110, 0.7) 14%,
+        rgba(255, 170, 60, 0.45) 28%,
+        rgba(255, 130, 50, 0.22) 45%,
+        rgba(255, 100, 40, 0.08) 65%,
+        rgba(255, 100, 40, 0.0) 80%);
+      border-radius: 50%;
+      filter: blur(10px);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      animation: flame-flicker 2.4s ease-in-out infinite;
+    }
+    @keyframes flame-flicker {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+      18%      { transform: translate(-52%, -48%) scale(1.12); opacity: 1; }
+      33%      { transform: translate(-48%, -53%) scale(0.93); opacity: 0.72; }
+      52%      { transform: translate(-50%, -50%) scale(1.18); opacity: 0.98; }
+      71%      { transform: translate(-53%, -50%) scale(0.96); opacity: 0.82; }
+      85%      { transform: translate(-49%, -49%) scale(1.07); opacity: 0.94; }
+    }
+    .closing-line {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+      color: var(--cream-bright);
+      max-width: 28rem;
+      margin: 0 auto;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+      opacity: 0.95;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
+  <main>
 
-  <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="motifs.jsx"></script>
-  <script type="text/babel" src="sections.jsx"></script>
-  <script type="text/babel" src="app.jsx"></script>
+    <!-- ───────── HERO ───────── -->
+    <section class="panel hero">
+      <div class="toran-strip" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="medallion reveal">
+          <img class="compass nw" src="assets/corner.png" alt="" aria-hidden="true" />
+          <img class="compass ne" src="assets/corner.png" alt="" aria-hidden="true" />
+          <img class="compass sw" src="assets/corner.png" alt="" aria-hidden="true" />
+          <img class="compass se" src="assets/corner.png" alt="" aria-hidden="true" />
+          <div class="medallion-frame">
+            <img src="assets/varnika.png" alt="Portrait of Varnika" />
+          </div>
+        </div>
+        <div class="hero-titling reveal">
+          <p class="hero-connector hero-opener">we joyfully invite you to the</p>
+          <h1 class="ceremony-names">
+            <span class="word">Ayushyahomam</span>
+            <span class="amp">&amp;</span>
+            <span class="word">Karnavedha</span>
+          </h1>
+          <p class="hero-connector">of our beloved daughter</p>
+          <p class="hero-name">Varnika</p>
+        </div>
+        <p class="hero-sub reveal">
+          9 June 2026 <span class="dot"></span> 7:00 AM <span class="dot"></span> Bengaluru
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────── DETAILS — TWO RITUALS ───────── -->
+    <section class="panel details">
+      <div class="thoran-strip reveal" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="ceremony-heading reveal">
+          <img class="ceremony-kalasha" src="assets/kalasha.png" alt="" aria-hidden="true" />
+          <div class="heading-text">
+            <p class="eyebrow">The Ceremony</p>
+            <h2 class="header">Two sacred rituals,<br/>one sunrise</h2>
+          </div>
+          <img class="ceremony-kalasha" src="assets/kalasha.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="cards">
+          <div class="ritual-card reveal">
+            <img class="icon" src="assets/homam.png" alt="" aria-hidden="true" />
+            <p class="card-eyebrow">Ritual one</p>
+            <p class="card-title">Ayushyahomam</p>
+            <p class="card-meta">Tuesday, 9 June 2026<br/>7:00 AM onwards</p>
+          </div>
+          <div class="ritual-card reveal">
+            <img class="icon" src="assets/lotus.png" alt="" aria-hidden="true" />
+            <p class="card-eyebrow">Ritual two</p>
+            <p class="card-title">Karnavedha</p>
+            <p class="card-meta">Ear-piercing samskara<br/>to follow the homam</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── VENUE ───────── -->
+    <section class="panel venue">
+      <div class="panel-inner">
+        <p class="eyebrow reveal">The Venue</p>
+        <p class="name reveal">Havyaka Bhavana</p>
+        <p class="loc reveal">Malleshwaram, Bengaluru</p>
+
+        <div class="map-frame reveal">
+          <iframe
+            src="https://maps.google.com/maps?q=Havyaka+Bhavana+Malleshwaram+Bangalore&amp;z=16&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map to Havyaka Bhavana"></iframe>
+        </div>
+        <a class="btn reveal"
+           href="https://www.google.com/maps/dir/?api=1&amp;destination=Havyaka+Bhavana+Malleshwaram+Bangalore"
+           target="_blank" rel="noopener">Open in Maps</a>
+      </div>
+    </section>
+
+    <!-- ───────── HOSTS ───────── -->
+    <section class="panel hosts">
+      <div class="toran-strip" aria-hidden="true"></div>
+      <img class="leaf l" src="assets/banana_leaf.png" alt="" aria-hidden="true" />
+      <img class="leaf r" src="assets/banana_leaf.png" alt="" aria-hidden="true" />
+      <div class="panel-inner">
+        <p class="preamble reveal">With love and gratitude,</p>
+        <h2 class="hosts-names reveal">Akshay <span class="amp">&amp;</span> Pavithra</h2>
+        <p class="hosts-sub reveal">parents of the little one</p>
+      </div>
+    </section>
+
+    <!-- ───────── CLOSING ───────── -->
+    <section class="panel closing">
+      <div class="toran-strip" aria-hidden="true"></div>
+      <div class="panel-inner">
+        <div class="lamp-wrap reveal">
+          <img src="assets/kuthuvilakku.png" alt="" aria-hidden="true" />
+          <div class="flame-glow" aria-hidden="true"></div>
+        </div>
+        <p class="closing-line reveal">Your blessings mean the world to us.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll(".reveal").forEach(function(el) { io.observe(el); });
+  </script>
 </body>
 </html>
